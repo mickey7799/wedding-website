@@ -214,24 +214,18 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>請等一下!</strong> 資料上傳中...'));
 
-        if (MD5($('#invite_code').val()) !== '9bdb60bff5bbb04c8ca38ff39d81efa5') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>抱歉!</strong> 你的驗證碼不正確唷！'));
-        } else {
-            $.post('https://script.google.com/macros/s/AKfycbzIVgSkECZtLVZ_M4Mh-M1ZO8jZhtqQruyahiXUQWDdLEHBqLeiWrHRoIQSAboFpp1g/exec', data)
-                .done(function (data) {
-                    console.log(data);
-                    if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                })
-                .fail(function (data) {
-                    console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>抱歉！</strong> 請再刷新重試'));
-                });
-        }
+        $.post('https://script.google.com/macros/s/AKfycbxIan5goWM_TcNc275pXs1vtJk993KYlL0vSeNPKgcgWQtr5_T0-hMwCuC6NpqueqDY/exec', data)
+            .done(function (data) {
+                if (data.result === "error") {
+                    $('#alert-wrapper').html(alert_markup('danger', data.message));
+                } else {
+                    $('#alert-wrapper').html('');
+                    $('#rsvp-modal').modal('show');
+                }
+            })
+            .fail(function (data) {
+                $('#alert-wrapper').html(alert_markup('danger', '<strong>抱歉！</strong> 請再刷新重試'));
+            });      
     });
 
 });
