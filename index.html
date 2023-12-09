@@ -622,20 +622,22 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-diamond"></i><input type="text" name="attend_pre_wedding" class=""
-                                                                  placeholder="會來11點戶外證婚嗎 (Y or N)"
-                                                                  minlength="1"
-                                                                  maxlength="5"
-                                                                  >
+                                <i class="fa fa-diamond"></i>
+                                <select name="attend_pre_wedding">
+                                    <option value="" disabled selected hidden>會參加11點戶外證婚嗎</option>
+                                    <option value="yes">參加</option>
+                                    <option value="no">不參加</option>
+                                    </select>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-beer"></i><input type="text" name="attend_wedding" class=""
-                                                                  placeholder="會來參加午宴嗎 (Y or N)"
-                                                                  minlength="1"
-                                                                  maxlength="5"
-                                                                  >
+                                <i class="fa fa-beer"></i>
+                                <select name="attend_wedding">
+                                    <option value="" disabled selected hidden>會參加12點午宴嗎</option>
+                                    <option value="yes">參加</option>
+                                    <option value="no">不參加</option>
+                                 </select>
                             </div>
                         </div>                      
                     </div>
