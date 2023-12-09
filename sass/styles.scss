@@ -844,6 +844,10 @@ RSVP form
         -webkit-border-radius: 6px;
         border-radius: 6px;
         border: none;
+        background-color: #ffffff;
+        option:disabled {       
+            color: $form-placeholder;
+        }  
       }
       input::-webkit-input-placeholder {
         color: $form-placeholder;
