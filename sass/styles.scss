@@ -848,6 +848,7 @@ RSVP form
         border: none;
         background-color: #ffffff;
         color: $txt-form;
+        -webkit-padding-start: 66px;
       }
       input::-webkit-input-placeholder {
         color: $txt-form;
